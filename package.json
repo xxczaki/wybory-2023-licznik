@@ -1,0 +1,17 @@
+{
+  "name": "wybory-2023-licznik",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "keywords": [],
+  "author": "Antoni Kępiński",
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^4.4.11"
+  }
+}
