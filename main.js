@@ -1,5 +1,14 @@
 import './style.css';
 
+import { registerSW } from 'virtual:pwa-register'
+
+registerSW({ 
+	immediate: true,
+	onOfflineReady() {
+		document.getElementById('offline-info').textContent = '✅ Gotowość do działania off-line'
+	},
+});
+
 // Sejm
 const SEJM_COUNT_ID = 'sejm-count';
 
