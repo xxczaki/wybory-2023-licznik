@@ -6,7 +6,7 @@
 
 ## Interfejs
 
-<img src="https://github.com/xxczaki/wybory-2023-licznik/assets/22645979/f5a6fd36-28ba-4a2e-9777-926bbeeb1de1" alt="Zrzut ekranu aplikacji" width="300"/>
+<img src="https://github.com/xxczaki/wybory-2023-licznik/assets/22645979/99df31e7-8cd5-416f-bfd6-60ae90b6e701" alt="Zrzut ekranu aplikacji" width="300"/>
 
 ## Zalety
 - prosty do zrozumienia kod źródłowy
