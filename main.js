@@ -5,9 +5,47 @@ import { registerSW } from 'virtual:pwa-register'
 registerSW({ 
 	immediate: true,
 	onOfflineReady() {
-		document.getElementById('offline-info').textContent = '✅ Gotowość do działania off-line'
+		localStorage.setItem('offline-ready', 'true');
+		document.getElementById('offline-info').textContent = '✅ Gotowość do działania off-line';
 	},
 });
+
+if (localStorage.getItem('offline-ready') === 'true') {
+	document.getElementById('offline-info').textContent = '✅ Gotowość do działania off-line';
+}
+
+// Głosujący
+const GLOSUJACY_COUNT_ID = 'glosujacy-count';
+
+function updateVisibleGlosujacyCount(operation) {
+	const rawCount = localStorage.getItem(GLOSUJACY_COUNT_ID) ?? '0';
+	let convertedCount = Number.parseInt(rawCount, 10);
+
+	switch (operation) {
+		case 'add':
+			convertedCount++;
+			break;
+		case 'sub': {
+			if (convertedCount === 0) break;
+
+			convertedCount--;
+			break;
+		}
+	}
+
+	localStorage.setItem(GLOSUJACY_COUNT_ID, convertedCount.toString());
+	document.getElementById(GLOSUJACY_COUNT_ID).textContent = convertedCount.toString();
+}
+
+updateVisibleGlosujacyCount();
+
+document.getElementById('glosujacy-add').onclick = () => {
+	updateVisibleGlosujacyCount('add');
+};
+
+document.getElementById('glosujacy-sub').onclick = () => {
+	updateVisibleGlosujacyCount('sub');
+};
 
 // Sejm
 const SEJM_COUNT_ID = 'sejm-count';
