@@ -32,14 +32,14 @@ if (localStorage.getItem('offline-ready') === 'true') {
 	document.getElementById('offline-info').textContent = '✅ Gotowość do działania off-line';
 }
 
-const categories = [
+const CATEGORIES = [
 	'glosujacy',
 	'sejm',
 	'senat',
 	'referendum',
 ];
 
-categories.forEach(category => {
+CATEGORIES.forEach(category => {
 	const countId = `${category}-count`;
 
 	updateCounter(countId);
@@ -52,11 +52,3 @@ categories.forEach(category => {
 		updateCounter(countId, 'sub');
 	};
 });
-
-document.getElementById('referendum-add').onclick = () => {
-	updateVisibleReferendumCount('add');
-};
-
-document.getElementById('referendum-sub').onclick = () => {
-	updateVisibleReferendumCount('sub');
-};

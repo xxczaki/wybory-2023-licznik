@@ -35,6 +35,21 @@ button {
 	height: 100%;
 	font-size: 2rem;
 	touch-action: manipulation;
+	appearance: none;
+	background-color: lightgray;
+}
+
+button[id$="-add"]:active {
+	background-color: lime;
+}
+
+button[id$="-sub"]:active {
+	background-color: red;
+}
+
+button[id$="-add"]:not(:active),
+button[id$="-sub"]:not(:active) {
+	transition: background-color 3s ease-out;
 }
 
 section {
